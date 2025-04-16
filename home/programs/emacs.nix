@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     emacs
     ripgrep
     fd
-    # git
+    # git # in /home/default.nix
   ];
 }

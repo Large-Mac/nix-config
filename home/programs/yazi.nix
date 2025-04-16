@@ -12,4 +12,4 @@
     poppler # For PDF preview
     imagemagick # For image processing
   ];
-};
+}
