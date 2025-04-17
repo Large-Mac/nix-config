@@ -84,6 +84,7 @@
     isNormalUser = true;
     description = "neo";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -98,6 +99,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
