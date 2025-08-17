@@ -25,6 +25,7 @@
     zfs.devNodes = "/dev/disk/by-id";
     
     # Kernel and parameters
+    # If using ZFS, use only the stable kernel that has ZFS support
     kernelPackages = pkgs.linuxPackages_6_6;
     kernelParams = [ "zfs.zfs_arc_max=2147483648" ];
     
@@ -61,6 +62,7 @@
       daily = 5;
       weekly = 2;
       monthly = 6;
+      flags = "-k -p"; # keeps snapshots & enables parallel processing
     };
     zed = {
       settings = {
@@ -71,6 +73,7 @@
   };
 
   # Set host ID for ZFS
+  # For new machines, run this command: head -c 8 /etc/machine-id (& replace below w/ the results)
   networking.hostId = "cebd22b3";
 
   # Time zone

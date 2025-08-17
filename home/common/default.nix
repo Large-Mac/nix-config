@@ -23,16 +23,20 @@
     distrobox
     yazi
     yt-dlp
+    ispell
+    xclip
+    file
   
     # Development tools
     gcc
     #clang
-    nodejs_23
+    nodejs
     git
     neovim
     emacs
     kitty
     alacritty
+    xterm
 
     # WM Packages
     feh
@@ -67,13 +71,18 @@
     nerd-fonts.terminess-ttf
     nerd-fonts.symbols-only
     iosevka-comfy.comfy-wide
-    # aporetic
+    aporetic
 
     # Nix-specific tools
     nixfmt # Nix formatter
     nix-index # Files database for Nix
     nix-tree # Interactive browser for Nix
   ];
+
+  xsession = {
+    enable = true;
+  };
+
 
   # Configure programs you use on all machines
   programs = {
