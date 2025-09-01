@@ -88,7 +88,21 @@
 
   xsession = {
     enable = true;
+    initExtra = ''
+      feh --bg-fill $HOME/wall.png
+      picom
+      dwmblocks &
+    '';
+    windowManager.command = "exec ${config.home.homeDirectory}/.config/suckless/dwm/dwm";
   };
+
+  home.file.".local/share/xsessions/my-dwm.desktop".text = ''
+    [Desktop Entry]
+    Name=My DWM
+    Comment=My Custom DWM Build
+    Exec=${config.home.homeDirectory}/.xsession
+    Type=XSession
+  '';
 
 
   # Configure programs you use on all machines
