@@ -96,7 +96,7 @@
   services.logind = {
     lidSwitch = "suspend";
     lidSwitchExternalPower = "suspend";
-    extraConfig = ''
+    settings.Login = ''
       HandlePowerKey=suspend
       IdleAction=suspend
       IdleActionSec=20min
