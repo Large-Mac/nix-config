@@ -96,11 +96,11 @@
   services.logind = {
     lidSwitch = "suspend";
     lidSwitchExternalPower = "suspend";
-    settings.Login = ''
-      HandlePowerKey=suspend
-      IdleAction=suspend
-      IdleActionSec=20min
-    '';
+    settings.Login = {
+      HandlePowerKey = "suspend";
+      IdleAction = "suspend";
+      IdleActionSec = "20min";
+    };
   };
 
   # Laptop-specific packages
