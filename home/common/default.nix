@@ -47,6 +47,13 @@
     acpi
     lm_sensors
 
+    (dwm.overrideAttrs {
+      src = builtins.path {
+        name = "dwmblocks-source";
+        path = "${config.home.homeDirectory}/.config/suckless/dwm";
+      };
+    })
+
     (dwmblocks.overrideAttrs {
       src = builtins.path {
         name = "dwmblocks-source";
